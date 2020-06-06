@@ -23,6 +23,9 @@ export default class Paint{
     }
 
     onMouseDown(e){
+
+        this.saveData = this.context.getImageData(0,0,this.canvas.clientWidth, this.canvas.height);
+
         this.canvas.onmousemove = e => this.onMouseMove(e);
         document.onmouseup = e => this.onMouseUp(e);
 
@@ -51,6 +54,8 @@ export default class Paint{
     }
 
     drawShape(){
+        this.context.putImageData(this.saveData,0,0);
+
         this.context.beginPath();
         this.context.moveTo(this.startPos.x,this.startPos.y);
         this.context.lineTo(this.currentPos.x,this.currentPos.y);
