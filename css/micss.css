@@ -43,9 +43,9 @@ footer#sticky-footer{
   color: white;
 }
 
-canvas{
-  width: 100%;
-  height: 100%;
+#canvas{
+  display: block;
+  background-color: rgb(255, 255, 255);
 }
 
 ul.options{
@@ -94,4 +94,29 @@ li.nav-item.boton > a:hover{
 
 .active{
   background-color: black;
+}
+#indicaciones{
+  background-color: rgba(233, 231, 115, 0.521);
+}
+
+#lienzo{
+  margin-top: 0px;
+  position:relative;
+  border: groove;
+  border-color: rgb(117, 116, 116);
+}
+
+#lienzo, #descripcion{
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.h-75{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#descripcion{
+  background-color: rgb(231, 231, 231);
+  padding-left: 8px;
+  padding-right: 8px;
 }

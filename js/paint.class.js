@@ -4,7 +4,7 @@ import {
     TOOL_PAINT_BUCKET, TOOL_PENCIL, TOOL_BRUSH, TOOL_ERASER
 } from "./tool.js";
 
-import {getMouserCoordsOnCanvas} from './utility.js'
+import {getMouseCoordsOnCanvas} from './utility.js'
 
 export default class Paint{
     constructor(canvasId){
@@ -26,13 +26,13 @@ export default class Paint{
         this.canvas.onmousemove = e => this.onMouseMove(e);
         document.onmouseup = e => this.onMouseUp(e);
 
-        this.startPos = getMouserCoordsOnCanvas(e,this.canvas);
-        console.log(this.startPos);
+        this.startPos = getMouseCoordsOnCanvas(e,this.canvas);
+        console.log('Posicion inicial:',this.startPos);
         
     }
 
     onMouseMove(e){
-        this.currentPos = getMouserCoordsOnCanvas(e,this.canvas);
+        this.currentPos = getMouseCoordsOnCanvas(e,this.canvas);
         console.log(this.currentPos);
 
         switch(this.tool){

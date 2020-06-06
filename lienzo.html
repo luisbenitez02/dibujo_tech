@@ -12,6 +12,7 @@
 
     <script src="./js/jquery3.4.1.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/canvasfill.js" type="module" defer></script>
     <script src="./js/app.js" type="module" defer></script>
 
     <title>Lienzo Draw</title>
@@ -321,9 +322,15 @@
         </nav>
     </header>
 
-    <div class="container-fluid h-75">
-        <div class="container-fluid" id="lienzo">
-            <canvas id="canvas"> </canvas>
+    <div class="row h-75">
+        <div class="col-sm-4" id="descripcion">
+            <h3>Titulo Leccion</h3>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus nihil fuga dolores distinctio nobis non est eveniet dicta a obcaecati, ullam excepturi corporis esse dolore sint adipisci et consequatur labore.
+            </p>
+        </div>
+        <div class="col-sm-8" id="lienzo">
+            <canvas id="canvas"></canvas>
         </div>
     </div>
 
