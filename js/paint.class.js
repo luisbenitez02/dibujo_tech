@@ -4,7 +4,7 @@ import {
     TOOL_PAINT_BUCKET, TOOL_PENCIL, TOOL_BRUSH, TOOL_ERASER
 } from "./tool.js";
 
-import {getMouseCoordsOnCanvas} from './utility.js'
+import {getMouseCoordsOnCanvas, encontrarDistancia} from './utility.js'
 
 export default class Paint{
     constructor(canvasId){
@@ -41,6 +41,8 @@ export default class Paint{
         switch(this.tool){
             case TOOL_LINE:
             case TOOL_RECTANGLE:
+            case TOOL_CIRCLE:
+            case TOOL_TRIANGLE:
                 this.drawShape();
                 break;
             default:
@@ -64,6 +66,16 @@ export default class Paint{
             this.context.lineTo(this.currentPos.x,this.currentPos.y);
         } else if(this.tool == TOOL_RECTANGLE){
             this.context.rect(this.startPos.x, this.startPos.y, this.currentPos.x - this.startPos.x, this.currentPos.y - this.startPos.y);
+        } else if (this.tool == TOOL_CIRCLE){
+            let distance = encontrarDistancia(this.startPos,this.currentPos);//cuando el mouse se ha alejado 10 empieza a hacer el circulo
+            //Formula de la distancia:
+            // https://www.purplemath.com/modules/distform.htm
+            this.context.arc(this.startPos.x,this.startPos.y, distance,0,2*Math.PI, false);
+        } else if (this.tool == TOOL_TRIANGLE){
+            this.context.moveTo(this.startPos.x + (this.currentPos.x - this.startPos.x)/2, this.startPos.y);
+            this.context.lineTo(this.startPos.x,this.currentPos.y);
+            this.context.lineTo(this.currentPos.x,this.currentPos.y);
+            this.context.closePath();
         }
         this.context.stroke();
     }
