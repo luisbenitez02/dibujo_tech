@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/svg+xml" href="resources/favicon.svg" sizes="any" />
+    <!-- Carga de bootstrap local o mediante CDN-->
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/micss.css" />
+
+    <script src="./js/jquery3.4.1.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/app.js" type="module" defer></script>
+
+    <title>Lienzo Draw</title>
+</head>
+
+<body id="black">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="resources/favicon.svg" width="30" height="30" alt="Dibujo Tecnico" title="Dibujo Tecnico" />
+                Draw
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Menu de contenido -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Aprendizaje
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Nivel Básico</a>
+                            <a class="dropdown-item" href="#">Nivel Intermedio</a>
+                            <a class="dropdown-item" href="#">Nivel Avanzado</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="lienzo.html">Lienzo</a>
+                        </div>
+                    </li>
+                    <ul class="navbar-nav options" id="controles">
+                        <li class="nav-item boton">
+                            <a href="#" class="btn item" role="button" data-command="undo">
+                                <svg class="bi bi-arrow-counterclockwise" width="1em" height="1em" viewBox="0 0 16 16"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M12.83 6.706a5 5 0 00-7.103-3.16.5.5 0 11-.454-.892A6 6 0 112.545 5.5a.5.5 0 11.91.417 5 5 0 109.375.789z"
+                                        clip-rule="evenodd" />
+                                    <path fill-rule="evenodd"
+                                        d="M7.854.146a.5.5 0 00-.708 0l-2.5 2.5a.5.5 0 000 .708l2.5 2.5a.5.5 0 10.708-.708L5.707 3 7.854.854a.5.5 0 000-.708z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="nav-item boton">
+                            <a href="#" class="btn item" role="button" data-command="download">
+                                <svg class="bi bi-download" width="1em" height="1em" viewBox="0 0 16 16"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M.5 8a.5.5 0 01.5.5V12a1 1 0 001 1h12a1 1 0 001-1V8.5a.5.5 0 011 0V12a2 2 0 01-2 2H2a2 2 0 01-2-2V8.5A.5.5 0 01.5 8z"
+                                        clip-rule="evenodd" />
+                                    <path fill-rule="evenodd"
+                                        d="M5 7.5a.5.5 0 01.707 0L8 9.793 10.293 7.5a.5.5 0 11.707.707l-2.646 2.647a.5.5 0 01-.708 0L5 8.207A.5.5 0 015 7.5z"
+                                        clip-rule="evenodd" />
+                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 1z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav options" id="figuras">
+                        <li class="nav-item boton">
+                            <a href="#" class="btn active" role="button" data-tool="line">
+                                <svg class="bi bi-slash" width="1em" height="1em" viewBox="0 0 16 16"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="nav-item boton">
+                            <a href="#" class="btn" role="button" data-tool="rectangle">
+                                <svg class="bi bi-square" width="1em" height="1em" viewBox="0 0 16 16"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M14 1H2a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V2a1 1 0 00-1-1zM2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="nav-item boton">
+                            <a href="#" class="btn" role="button" data-tool="circle">
+                                <svg class="bi bi-circle" width="1em" height="1em" viewBox="0 0 16 16"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="nav-item boton">
+                            <a href="#" class="btn" role="button" data-tool="triangle">
+                                <svg class="bi bi-triangle" width="1em" height="1em" viewBox="0 0 16 16"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M7.938 2.016a.146.146 0 00-.054.057L1.027 13.74a.176.176 0 00-.002.183c.016.03.037.05.054.06.015.01.034.017.066.017h13.713a.12.12 0 00.066-.017.163.163 0 00.055-.06.176.176 0 00-.003-.183L8.12 2.073a.146.146 0 00-.054-.057A.13.13 0 008.002 2a.13.13 0 00-.064.016zm1.044-.45a1.13 1.13 0 00-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav options" id="pinceles">
+                        <!-- seccion de brochitas-->
+                        <li class="nav-item boton">
+                            <a href="#" class="btn" role="button" data-tool="pencil">
+                                <svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M11.293 1.293a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-9 9a1 1 0 01-.39.242l-3 1a1 1 0 01-1.266-1.265l1-3a1 1 0 01.242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"
+                                        clip-rule="evenodd" />
+                                    <path fill-rule="evenodd"
+                                        d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 00.5.5H4v.5a.5.5 0 00.5.5H5v.5a.5.5 0 00.5.5H6v-1.5a.5.5 0 00-.5-.5H5v-.5a.5.5 0 00-.5-.5H3z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="nav-item boton">
+                            <a href="#" class="btn" role="button" data-tool="brush">
+                                <svg class="bi bi-brush" width="1em" height="1em" viewBox="0 0 16 16"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M15.213 1.018a.572.572 0 01.756.05.57.57 0 01.057.746C15.085 3.082 12.044 7.107 9.6 9.55c-.71.71-1.42 1.243-1.952 1.596-.508.339-1.167.234-1.599-.197-.416-.416-.53-1.047-.212-1.543.346-.542.887-1.273 1.642-1.977 2.521-2.35 6.476-5.44 7.734-6.411z" />
+                                    <path
+                                        d="M7 12a2 2 0 01-2 2c-1 0-2 0-3.5-.5s.5-1 1-1.5 1.395-2 2.5-2a2 2 0 012 2z" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="nav-item boton">
+                            <a href="#" class="btn" role="button" data-tool="paint_bucket">
+                                <svg class="bi bi-bucket-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M8 1.5A4.5 4.5 0 003.5 6h-1a5.5 5.5 0 1111 0h-1A4.5 4.5 0 008 1.5z"
+                                        clip-rule="evenodd" />
+                                    <path fill-rule="evenodd"
+                                        d="M1.61 5.687A.5.5 0 012 5.5h12a.5.5 0 01.488.608l-1.826 8.217a1.5 1.5 0 01-1.464 1.175H4.802a1.5 1.5 0 01-1.464-1.175L1.512 6.108a.5.5 0 01.098-.42z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="nav-item boton">
+                            <a href="#" class="btn" role="button" data-tool="eraser">
+                                <svg class="bi bi-x-square" width="1em" height="1em" viewBox="0 0 16 16"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M14 1H2a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V2a1 1 0 00-1-1zM2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2z"
+                                        clip-rule="evenodd" />
+                                    <path fill-rule="evenodd"
+                                        d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z"
+                                        clip-rule="evenodd" />
+                                    <path fill-rule="evenodd"
+                                        d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav options">
+                        <li class="nav-item dropdown boton linewidths for-shapes">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <svg class="bi bi-bullseye" width="1em" height="1em" viewBox="0 0 16 16"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z"
+                                        clip-rule="evenodd" />
+                                    <path fill-rule="evenodd"
+                                        d="M8 13A5 5 0 108 3a5 5 0 000 10zm0 1A6 6 0 108 2a6 6 0 000 12z"
+                                        clip-rule="evenodd" />
+                                    <path fill-rule="evenodd"
+                                        d="M8 11a3 3 0 100-6 3 3 0 000 6zm0 1a4 4 0 100-8 4 4 0 000 8z"
+                                        clip-rule="evenodd" />
+                                    <path d="M9.5 8a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item active" href="#" data-line-width="1">1</a>
+                                <a class="dropdown-item" href="#" data-line-width="2">2</a>
+                                <a class="dropdown-item" href="#" data-line-width="3">3</a>
+                                <a class="dropdown-item" href="#" data-line-width="4">4</a>
+                                <a class="dropdown-item" href="#" data-line-width="5">5</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown boton linewidths for-brush" style="display: none;">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <svg class="bi bi-circle-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="8" cy="8" r="8" />
+                                </svg>
+                            </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item active" href="#" data-brush-width="4">4</a>
+                            <a class="dropdown-item" href="#" data-brush-width="6">6</a>
+                            <a class="dropdown-item" href="#" data-brush-width="8">8</a>
+                            <a class="dropdown-item" href="#" data-brush-width="10">10</a>
+                            <a class="dropdown-item" href="#" data-brush-width="12">12</a>
+                        </div>
+                        </li>
+
+                    </ul>
+
+                    <!--<li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>-->
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown boton">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <svg class="bi bi-droplet-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M8 16a6 6 0 006-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 006 6zM6.646 4.646c-.376.377-1.272 1.489-2.093 3.13l.894.448c.78-1.559 1.616-2.58 1.907-2.87l-.708-.708z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item active" href="#" data-color="#666666">
+                                <div class="colors" id="color-black">
+                                    #666666
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="#" data-color="#fdfefe">
+                                <div class="colors" id="color-white">
+                                    #fdfefe
+                                </div>
+
+                            </a>
+                            <a class="dropdown-item" href="#" data-color="#fdfefe">
+                                <div class="colors" id="color-red">
+                                    #e53935
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="#" data-color="#fbc02d">
+                                <div class="colors" id="color-yellow">
+                                    #fbc02d
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="#" data-color="#1565c0">
+                                <div class="colors" id="color-blue">
+                                    #1565c0
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="#" data-color="#2e7d32">
+                                <div class="colors" id="color-green">
+                                    #2e7d32
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link p-2">
+                            <svg class="bi bi-person-square" width="1em" height="1em" viewBox="0 0 16 16"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M14 1H2a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V2a1 1 0 00-1-1zM2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2z"
+                                    clip-rule="evenodd" />
+                                <path fill-rule="evenodd"
+                                    d="M2 15v-1c0-1 1-4 6-4s6 3 6 4v1H2zm6-6a3 3 0 100-6 3 3 0 000 6z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link p-2">
+                            <svg class="bi bi-gift" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M2 6v8.5a.5.5 0 00.5.5h11a.5.5 0 00.5-.5V6h1v8.5a1.5 1.5 0 01-1.5 1.5h-11A1.5 1.5 0 011 14.5V6h1zm8-5a1.5 1.5 0 00-1.5 1.5c0 .098.033.16.12.227.103.081.272.15.49.2A3.44 3.44 0 009.96 3h.015L10 2.999l.025.002h.014A2.569 2.569 0 0010.293 3c.17-.006.387-.026.598-.073.217-.048.386-.118.49-.199.086-.066.119-.13.119-.227A1.5 1.5 0 0010 1zm0 3h-.006a3.535 3.535 0 01-.326 0 4.435 4.435 0 01-.777-.097c-.283-.063-.614-.175-.885-.385A1.255 1.255 0 017.5 2.5a2.5 2.5 0 015 0c0 .454-.217.793-.506 1.017-.27.21-.602.322-.885.385a4.434 4.434 0 01-1.104.099H10z"
+                                    clip-rule="evenodd" />
+                                <path fill-rule="evenodd"
+                                    d="M6 1a1.5 1.5 0 00-1.5 1.5c0 .098.033.16.12.227.103.081.272.15.49.2A3.44 3.44 0 005.96 3h.015L6 2.999l.025.002h.014l.053.001a3.869 3.869 0 00.799-.076c.217-.048.386-.118.49-.199.086-.066.119-.13.119-.227A1.5 1.5 0 006 1zm0 3h-.006a3.535 3.535 0 01-.326 0 4.435 4.435 0 01-.777-.097c-.283-.063-.614-.175-.885-.385A1.255 1.255 0 013.5 2.5a2.5 2.5 0 015 0c0 .454-.217.793-.506 1.017-.27.21-.602.322-.885.385a4.435 4.435 0 01-1.103.099H6zm1.5 12V6h1v10h-1z"
+                                    clip-rule="evenodd" />
+                                <path fill-rule="evenodd"
+                                    d="M15 4H1v1h14V4zM1 3a1 1 0 00-1 1v1a1 1 0 001 1h14a1 1 0 001-1V4a1 1 0 00-1-1H1z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="#">
+                            <svg class="bi bi-question-square" width="1em" height="1em" viewBox="0 0 16 16"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M14 1H2a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V2a1 1 0 00-1-1zM2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2z"
+                                    clip-rule="evenodd" />
+                                <path
+                                    d="M5.25 6.033h1.32c0-.781.458-1.384 1.36-1.384.685 0 1.313.343 1.313 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.007.463h1.307v-.355c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.326 0-2.786.647-2.754 2.533zm1.562 5.516c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid h-75">
+        <div class="container-fluid" id="lienzo">
+            <canvas id="canvas"> </canvas>
+        </div>
+    </div>
+
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50 fixed-bottom">
+        <div class="container text-center">
+            <small>Hecho con ♥</small>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+.jumbotron {
+  background-image: url("../resources/backpic.jpg");
+  background-size: cover;
+}
+
+#contenedor{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.no-border{
+    border-color: white;
+}
+
+html,body {
+  height: 100%;
+}
+
+body#black{
+  background-color: rgb(44, 44, 44);
+}
+
+footer#sticky-footer{
+  background-color:#212529;
+}
+
+#big-daddy{
+  margin: 0px;
+  padding: 0px;
+}
+
+#back-lienzo{
+  background-color: black;
+}
+
+#lienzo {
+  margin-top: 15px;
+  height: 100%;
+  background: white;
+}
+
+#info{
+  color: white;
+}
+
+canvas{
+  width: 100%;
+  height: 100%;
+}
+
+ul.options{
+  background-color:rgba(44, 44, 44, 0.61);
+  border-radius: 2px;
+  border: 1px inset rgba(44, 44, 44, 1);
+}
+
+li.nav-item.boton > a > svg{
+  color: white;
+}
+
+li.nav-item.boton > a:hover{
+  background-color: rgb(22, 22, 22);
+}
+
+#color-black{
+  background-color: black;
+  color: black;
+}
+
+#color-white{
+  background-color: #fdfefe;
+  color: #fdfefe;
+}
+
+#color-red{
+  background-color: #e53935;
+  color: #e53935;
+}
+
+#color-yellow{
+  background-color: #fbc02d;
+  color: #fbc02d;
+}
+
+#color-blue{
+  background-color:  #1565c0 ;
+  color:  #1565c0 ;
+}
+
+#color-green{
+  background-color:  #2e7d32 ;
+  color:  #2e7d32 ;
+}
+
+.active{
+  background-color: black;
+}
