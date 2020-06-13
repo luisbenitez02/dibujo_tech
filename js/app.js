@@ -5,6 +5,9 @@ import Paint from "./paint.class.js"
 
 var paint = new Paint('canvas');
 paint.activeTool = TOOL_LINE;
+paint.lineWidth = 1;//ancho de brocha predeterminado
+paint.brushSize = 4;
+paint.selectedTool = "#000000";
 paint.init();
 /* Selector de comandos atras y descarga */
 document.querySelectorAll("[data-command]").forEach(
@@ -51,12 +54,15 @@ document.querySelectorAll("[data-tool]").forEach(
     }
 );
 
-/** Selectores de grueso en brochitas */
+/** Selectores de grueso en lapiz */
 document.querySelectorAll("[data-line-width]").forEach(
     item => {
         item.addEventListener("click", e => {//cuando hago click cambio propiedad entre ellos
             document.querySelector("[data-line-width].active").classList.toggle("active");
-            item.classList.toggle('active')
+            item.classList.toggle('active');
+
+            let linewidth = item.getAttribute('data-line-width');
+            paint.lineWidth = linewidth; //asigno tamaño de brocha seleccionado
         });
     }
 );
@@ -66,7 +72,10 @@ document.querySelectorAll("[data-brush-width]").forEach(
     item => {
         item.addEventListener("click", e => {//cuando hago click cambio propiedad entre ellos
             document.querySelector("[data-brush-width].active").classList.toggle("active");
-            item.classList.toggle('active')
+            item.classList.toggle('active');
+            
+            let brushSize = item.getAttribute('data-brush-width');
+            paint.brushSize = brushSize; //asigno tamaño de brocha seleccionado
         });
     }
 );
@@ -76,7 +85,10 @@ document.querySelectorAll("[data-color]").forEach(
     item => {
         item.addEventListener("click", e => {//cuando hago click cambio propiedad entre ellos
             document.querySelector("[data-color].active").classList.toggle("active");
-            item.classList.toggle('active')
+            item.classList.toggle('active');
+
+            let color = item.getAttribute("data-color");
+            paint.selectedColor = color;
         });
     }
 );
