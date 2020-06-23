@@ -5,6 +5,7 @@ import {
 } from "./tool.js";
 
 import {getMouseCoordsOnCanvas, encontrarDistancia} from './utility.js'
+import Fill from './fill.class.js';
 
 export default class Paint{
     constructor(canvasId){
@@ -49,6 +50,9 @@ export default class Paint{
         if(this.tool == TOOL_PENCIL || this.tool == TOOL_BRUSH){
             this.context.beginPath();
             this.context.moveTo(this.startPos.x, this.startPos.y);
+        } else if (this.tool == TOOL_PAINT_BUCKET){
+            //Herramienta de balde para pintar --> fillcolor
+            new Fill(this.canvas, this.startPos,this.color);
         }
 
         

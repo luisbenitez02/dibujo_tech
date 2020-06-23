@@ -7,7 +7,8 @@ var paint = new Paint('canvas');
 paint.activeTool = TOOL_LINE;
 paint.lineWidth = 1;//ancho de brocha predeterminado
 paint.brushSize = 4;
-paint.selectedTool = "#000000";
+//paint.selectedTool = "#000000";
+paint.selectedColor = "#000000";
 paint.init();
 /* Selector de comandos atras y descarga */
 document.querySelectorAll("[data-command]").forEach(
