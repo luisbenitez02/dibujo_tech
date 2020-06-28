@@ -53,6 +53,10 @@ export default class Paint{
         } else if (this.tool == TOOL_PAINT_BUCKET){
             //Herramienta de balde para pintar --> fillcolor
             new Fill(this.canvas, this.startPos,this.color);
+        } else if (this.tool == TOOL_ERASER){
+            //herramienta borrador
+            this.context.clearRect(this.startPos.x,this.startPos.y,
+                this._brushSize, this._brushSize)
         }
 
         
@@ -75,6 +79,9 @@ export default class Paint{
             case TOOL_BRUSH:
                 this.drawFreeLine(this._brushSize);
                 break;
+            case TOOL_ERASER:
+                this.context.clearRect(this.currentPos.x,this.currentPos.y,
+                    this._brushSize, this._brushSize)
             default:
                 break;
         }

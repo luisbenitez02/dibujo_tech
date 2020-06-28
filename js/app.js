@@ -42,6 +42,7 @@ document.querySelectorAll("[data-tool]").forEach(
                     document.querySelector(".for-brush").style.display = "none";
                     break;
                 case TOOL_BRUSH:
+                case TOOL_ERASER:
                     //activar grososres brush
                     document.querySelector(".for-brush").style.display = "block";
                     //invisible shape para pencil
