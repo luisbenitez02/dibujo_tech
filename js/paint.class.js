@@ -133,7 +133,7 @@ export default class Paint{
             this.context.putImageData(this.undoStack[this.undoStack.length - 1],0,0);
             this.undoStack.pop();
         } else{
-            alert("Atras no disponible")
+            alert("Paso Atras no disponible")
         }
     }
 }

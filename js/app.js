@@ -19,6 +19,13 @@ document.querySelectorAll("[data-command]").forEach(
 
             if (command === "undo") {
                 paint.undoPaint();
+            } else if (command === "download"){
+                var canvas = document.getElementById("canvas");
+                var image = canvas.toDataURL("image/png",1.0).replace("image/png", "image/octe-stream");
+                var link = document.createElement("a");
+                link.download="my-lienzo.png";
+                link.href = image;
+                link.click();
             }
         });
     }
