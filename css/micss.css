@@ -120,3 +120,7 @@ li.nav-item.boton > a:hover{
   padding-left: 8px;
   padding-right: 8px;
 }
+/* deja inline los campos de parametro*/
+.param_input{ 
+  display: inline;
+}
