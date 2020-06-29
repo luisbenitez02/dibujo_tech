@@ -6,3 +6,6 @@ export const TOOL_PAINT_BUCKET = "paint_bucket";
 export const TOOL_PENCIL = "pencil";
 export const TOOL_BRUSH = "brush";
 export const TOOL_ERASER = "eraser";
+export const TOOL_CIRCLE_PARAM = "circle_params";
+export const TOOL_SQUARE_PARAM = "square_params";
+export const TOOL_TRIANGLE_PARAM = "triangle_params";

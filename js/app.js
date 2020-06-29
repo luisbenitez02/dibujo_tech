@@ -1,5 +1,5 @@
 import { TOOL_LINE, TOOL_RECTANGLE, TOOL_CIRCLE, TOOL_TRIANGLE,
-TOOL_PAINT_BUCKET, TOOL_PENCIL, TOOL_BRUSH, TOOL_ERASER} from "./tool.js";
+TOOL_PAINT_BUCKET, TOOL_PENCIL, TOOL_BRUSH, TOOL_ERASER, TOOL_CIRCLE_PARAM, TOOL_TRIANGLE_PARAM, TOOL_SQUARE_PARAM} from "./tool.js";
 
 import Paint from "./paint.class.js"
 
@@ -26,7 +26,7 @@ document.querySelectorAll("[data-command]").forEach(
                 link.download="my-lienzo.png";
                 link.href = image;
                 link.click();
-            }
+            } 
         });
     }
 );
@@ -48,6 +48,9 @@ document.querySelectorAll("[data-tool]").forEach(
                 case TOOL_CIRCLE:
                 case TOOL_TRIANGLE:
                 case TOOL_PENCIL:
+                case TOOL_CIRCLE_PARAM:
+                case TOOL_SQUARE_PARAM:
+                case TOOL_TRIANGLE_PARAM:
                     //activar el selector de grosor para shapes
                     document.querySelector(".for-shapes").style.display = "block";
                     //invisible shape para brush

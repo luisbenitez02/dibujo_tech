@@ -1,7 +1,7 @@
 import Point from './point.model.js'
 import {
     TOOL_LINE, TOOL_RECTANGLE, TOOL_CIRCLE, TOOL_TRIANGLE,
-    TOOL_PAINT_BUCKET, TOOL_PENCIL, TOOL_BRUSH, TOOL_ERASER
+    TOOL_PAINT_BUCKET, TOOL_PENCIL, TOOL_BRUSH, TOOL_ERASER, TOOL_CIRCLE_PARAM, TOOL_SQUARE_PARAM, TOOL_TRIANGLE_PARAM
 } from "./tool.js";
 
 import {getMouseCoordsOnCanvas, encontrarDistancia} from './utility.js'
@@ -62,8 +62,10 @@ export default class Paint{
             //herramienta borrador
             this.context.clearRect(this.startPos.x,this.startPos.y,
                 this._brushSize, this._brushSize)
+        }else if (this.tool == TOOL_CIRCLE_PARAM || this.tool == TOOL_SQUARE_PARAM || this.tool == TOOL_TRIANGLE_PARAM){
+            //this.capture();//captura valor del modal
+            this.drawShapeParams();
         }
-
         
     }
 
@@ -117,6 +119,40 @@ export default class Paint{
             this.context.moveTo(this.startPos.x + (this.currentPos.x - this.startPos.x)/2, this.startPos.y);
             this.context.lineTo(this.startPos.x,this.currentPos.y);
             this.context.lineTo(this.currentPos.x,this.currentPos.y);
+            this.context.closePath();
+        } 
+        this.context.stroke();
+    }
+
+    capture(){
+        var valor = document.getElementById("param_figure").value;
+        console.log(valor);
+
+        return valor;
+    }
+
+    drawShapeParams(){
+        this.context.putImageData(this.saveData,0,0);
+
+        this.context.beginPath();
+
+        //document.getElementById('textbox_id').value
+
+        if(this.tool == TOOL_CIRCLE_PARAM){
+            //console.log("me dispare");
+            this.valor = this.capture();
+            //console.log(this.startPos.x, this.startPos.y,this.valor);
+            this.context.arc(this.startPos.x,this.startPos.y, this.valor,0,2*Math.PI, false);
+        } else if (this.tool == TOOL_SQUARE_PARAM){
+            this.valor = this.capture();
+            this.context.rect(this.startPos.x, this.startPos.y, this.valor, this.valor);
+        }else if (this.tool == TOOL_TRIANGLE_PARAM){
+            this.valor = this.capture();
+
+            this.context.moveTo(this.startPos.x, this.startPos.y);
+            this.context.lineTo(this.startPos.x - this.valor, this.startPos.y);
+            this.context.lineTo(this.startPos.x - (this.valor/2),this.startPos.y - this.valor);
+            this.context.lineTo(this.startPos.x,this.startPos.y);
             this.context.closePath();
         }
         this.context.stroke();

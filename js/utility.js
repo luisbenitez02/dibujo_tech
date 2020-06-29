@@ -17,3 +17,10 @@ export function encontrarDistancia(cordenada1,cordenada2){//vienes desde paint.c
 
     return distancia
 }
+
+//para obtener valor del input y enviar a la funcion de distancia
+export function distanciaParams(cordenada1){//recibo solo posicion inicial del click
+    var valor=document.getElementById("circle_param").value;  
+    console.log(valor);
+    
+}  

@@ -7,6 +7,10 @@ var canvas = document.querySelector('canvas');
   fitToContainer(canvas);
 };*/
 
+$(".mi-input").click(function () {
+  alert(this.value);
+});
+
 fitToContainer(canvas);
 
 function fitToContainer(canvas){
