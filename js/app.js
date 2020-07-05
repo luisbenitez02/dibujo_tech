@@ -98,7 +98,7 @@ document.querySelectorAll("[data-brush-width]").forEach(
 );
 
 /** Selector de colores */
-document.querySelectorAll("[data-color]").forEach(
+/* document.querySelectorAll("[data-color]").forEach(
     item => {
         item.addEventListener("click", e => {//cuando hago click cambio propiedad entre ellos
             document.querySelector("[data-color].active").classList.toggle("active");
@@ -109,3 +109,13 @@ document.querySelectorAll("[data-color]").forEach(
         });
     }
 );
+ */
+
+ //Nuevo selector de colores completo
+var micolor_selector = document.getElementById("color-select");
+micolor_selector.addEventListener("input", function() {
+    //console.log(micolor_selector.value);
+    let color = micolor_selector.value;
+    //console.log(color);
+    paint.selectedColor = color;
+}, false); 

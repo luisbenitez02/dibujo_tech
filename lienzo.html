@@ -197,7 +197,7 @@
                                           </svg>
                                     <!--</div>-->
                                 </a>
-                                <a class="dropdown-item " href="#" data-tool="square_params" title="Cuadrado con medidas" data-toggle="modal" data-target="#myModal">
+                                <a class="dropdown-item " href="#" data-tool="square_params" title="Cuadrado con medidas" data-toggle="modal" data-target="#myModalcuadro">
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                                           </svg>
@@ -260,7 +260,8 @@
                     </li>-->
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown boton">
+                    <input type="color" class="form-control" id="color-select" data-color="none">
+                    <!-- <li class="nav-item dropdown boton">
                         <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <svg class="bi bi-droplet-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
@@ -303,7 +304,7 @@
                                 </div>
                             </a>
                         </div>
-                    </li>
+                    </li> -->
                     
                     <li class="nav-item">
                         <a href="#" class="nav-link p-2">
@@ -356,7 +357,7 @@
         <div class="col-sm-4" id="descripcion">
             <h3>Titulo Leccion</h3>
             <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus nihil fuga dolores distinctio nobis non est eveniet dicta a obcaecati, ullam excepturi corporis esse dolore sint adipisci et consequatur labore.
+                Hola! estamos en desarrollo, sit amet consectetur adipisicing elit. Temporibus nihil fuga dolores distinctio nobis non est eveniet dicta a obcaecati, ullam excepturi corporis esse dolore sint adipisci et consequatur labore.
             </p>
         </div>
         <div class="col-sm-8" id="lienzo">
@@ -379,7 +380,32 @@
           </button>
         </div>
         <div class="modal-body">
-            <input type="number" class="form-control param_input" id="param_figure" min="10" max="100" name="param_figure" placeholder="20">
+            <input type="number" class="form-control param_input" id="param_figure" min="10" max="250" name="param_figure" placeholder="20">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="sendValue" data-dismiss="modal">Listo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal cuadrado-->
+  <div class="modal fade" id="myModalcuadro" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalcuadro" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Ingresa tamaño</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <label for="param_figure_largo">Anchura</label>
+            <input type="number" class="form-control param_input" id="param_figure_largo" min="10" max="250" name="param_figure_cuadrado_1" placeholder="Anchura">
+            <br><br>
+            <label for="param_figure_ancho">Altura</label>
+            <input type="number" class="form-control param_input" id="param_figure_ancho" min="10" max="250" name="param_figure_cuadrado_2" placeholder="Altura">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

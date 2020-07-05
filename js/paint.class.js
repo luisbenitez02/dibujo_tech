@@ -12,7 +12,7 @@ export default class Paint{
         this.canvas = document.getElementById(canvasId);
         this.context = canvas.getContext("2d");
         this.undoStack = [];
-        this.undoLimit = 3;// TODO controla maximo de "back"
+        this.undoLimit = 10;// TODO controla maximo de "back"
     }
 
     set activeTool(tool){
@@ -131,6 +131,14 @@ export default class Paint{
         return valor;
     }
 
+    capture_cuadro(){
+        var valor1 = document.getElementById("param_figure_largo").value;
+        var valor2 = document.getElementById("param_figure_ancho").value;
+        console.log(valor1,valor2);
+        //dos parametros
+        return [valor1,valor2];
+    }
+
     drawShapeParams(){
         this.context.putImageData(this.saveData,0,0);
 
@@ -144,8 +152,11 @@ export default class Paint{
             //console.log(this.startPos.x, this.startPos.y,this.valor);
             this.context.arc(this.startPos.x,this.startPos.y, this.valor,0,2*Math.PI, false);
         } else if (this.tool == TOOL_SQUARE_PARAM){
-            this.valor = this.capture();
-            this.context.rect(this.startPos.x, this.startPos.y, this.valor, this.valor);
+            this.valores = this.capture_cuadro();
+            let valor1 = this.valores[0];
+            let valor2 = this.valores[1];
+            
+            this.context.rect(this.startPos.x, this.startPos.y, valor1, valor2);
         }else if (this.tool == TOOL_TRIANGLE_PARAM){
             this.valor = this.capture();
 
