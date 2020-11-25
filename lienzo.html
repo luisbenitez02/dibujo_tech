@@ -355,10 +355,30 @@
 
     <div class="row h-75">
         <div class="col-sm-4" id="descripcion">
-            <h3>Titulo Lección</h3>
+            <h3>¿Necesitas ayuda?</h3>
+            <p><b>
+                Puedes revisar los recursos de aprendizaje, haz clic sobre los enlaces para ver videos de cada herramienta
+              </b></p>
             <p>
-                En este espacio encontraras información acerca de tus lecciones de dibujo técnico, consejos y ejercicios para desarrollar
+              <a href="" data-toggle="modal" data-target="#videomodal" data-link='{"video":"https://www.youtube.com/embed/6e2o_o-LafQ", "title":"tool linea"}''>Las líneas rectas y las figuras geométricas</a> son las herramientas de dibujo más básicas y fáciles de utilizar. Aplica colores a los bordes y rellénalas como quieras.
             </p>
+            <p>
+              <a href="" data-toggle="modal" data-target="#videomodal" data-link='{"video":"https://www.youtube.com/embed/H3XB3veinsU", "title":"tool Lapiz"}'>Puedes realizar trazos libres</a> usando colores y grosores de línea diferentes ya sea con la herramienta de lápiz de trazo delgado o con <a data-toggle="modal" data-target="#videomodal" href="" data-link='{"video":"https://www.youtube.com/embed/9srf0SXhJj8", "title":"tool pincel"}''>el pincel.</a>
+            </p>
+            <p>
+              Si no te gusta algo puedes usar la herramienta <a href="" data-toggle="modal" data-target="#videomodal" data-link='{"video":"https://www.youtube.com/embed/tOdt1iZz_5s","title":"tool borrador"}'>borrador</a> o bien puedes dar un <a href="" data-toggle="modal" data-target="#videomodal" data-link='{"video":"https://www.youtube.com/embed/HMejLHahfqs","title":"tool paso atras"}'>paso atrás</a> y eliminar toda una acción en un clic.
+            </p>
+            <p>
+              También puedes utilizar <a href="" data-toggle="modal" data-target="#videomodal" data-link='{"video":"https://www.youtube.com/embed/MKXKaOOzM84","title":"tool circulo"}'>medidas en pixeles para dibujar figuras geométricas</a>. Círculos,
+              <a href="" data-toggle="modal" data-target="#videomodal" data-link='{"video":"https://www.youtube.com/embed/neLXlDdUX_I","title":"tool medidas"}'>triángulos y rectángulos</a> pueden ser dibujados usando parámetros numéricos.
+            </p>
+            <p>
+              Para guardar tu trabajo presiona el icono <b><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-download" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></b>
+              </svg> en la barra de herramientas y descárgalo en tu equipo.
+            </p>
+
         </div>
         <div class="col-sm-8" id="lienzo">
             <canvas id="canvas"></canvas>
@@ -415,6 +435,31 @@
     </div>
   </div>
 
+
+  <!--Modal videos-->
+  <!-- Modal -->
+  <div class="modal fade" id="videomodal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item video_ned" id="mi_iframe" width="" height="" src="" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/actions.js"></script>
     <footer id="sticky-footer" class="py-4 bg-dark text-white-50 fixed-bottom">
         <div class="container text-center">
             <small>Hecho con ♥</small>

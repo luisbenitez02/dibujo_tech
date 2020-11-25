@@ -119,6 +119,7 @@ li.nav-item.boton > a:hover{
   background-color: rgb(231, 231, 231);
   padding-left: 8px;
   padding-right: 8px;
+  overflow-y: auto;
 }
 /* deja inline los campos de parametro*/
 .param_input{ 
