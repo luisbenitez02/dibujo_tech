@@ -131,3 +131,7 @@ li.nav-item.boton > a:hover{
   width: 3.5em !important;
   padding: .3rem .5rem !important;
 }
+
+.initial_margin{
+  margin-top: 75px;
+}

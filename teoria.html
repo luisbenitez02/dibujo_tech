@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="resources/favicon.svg" sizes="any" />
+    <!-- Carga de bootstrap local o mediante CDN-->
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/micss.css" />
+
+    <script src="./js/jquery3.4.1.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <title>Teoria del dibujo tecnico</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="index.html">
+                <img src="resources/favicon.svg" width="30" height="30" alt="Dibujo Tecnico" title="Dibujo Tecnico" />
+                Draw
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Menu de contenido -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Contenido
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="teoria.html">Teoria del dibujo tecnico</a>
+                            <a class="dropdown-item" href="glosario.html">Glosario</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Informacion sobre el PMV</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Aprendizaje
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Nivel Básico</a>
+                            <a class="dropdown-item" href="#">Nivel Intermedio</a>
+                            <a class="dropdown-item" href="#">Nivel Avanzado</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="lienzo.html">Lienzo</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link p-2">
+                            <svg class="bi bi-person-square" width="1em" height="1em" viewBox="0 0 16 16"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M14 1H2a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V2a1 1 0 00-1-1zM2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2z"
+                                    clip-rule="evenodd" />
+                                <path fill-rule="evenodd"
+                                    d="M2 15v-1c0-1 1-4 6-4s6 3 6 4v1H2zm6-6a3 3 0 100-6 3 3 0 000 6z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link p-2">
+                            <svg class="bi bi-gift" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M2 6v8.5a.5.5 0 00.5.5h11a.5.5 0 00.5-.5V6h1v8.5a1.5 1.5 0 01-1.5 1.5h-11A1.5 1.5 0 011 14.5V6h1zm8-5a1.5 1.5 0 00-1.5 1.5c0 .098.033.16.12.227.103.081.272.15.49.2A3.44 3.44 0 009.96 3h.015L10 2.999l.025.002h.014A2.569 2.569 0 0010.293 3c.17-.006.387-.026.598-.073.217-.048.386-.118.49-.199.086-.066.119-.13.119-.227A1.5 1.5 0 0010 1zm0 3h-.006a3.535 3.535 0 01-.326 0 4.435 4.435 0 01-.777-.097c-.283-.063-.614-.175-.885-.385A1.255 1.255 0 017.5 2.5a2.5 2.5 0 015 0c0 .454-.217.793-.506 1.017-.27.21-.602.322-.885.385a4.434 4.434 0 01-1.104.099H10z"
+                                    clip-rule="evenodd" />
+                                <path fill-rule="evenodd"
+                                    d="M6 1a1.5 1.5 0 00-1.5 1.5c0 .098.033.16.12.227.103.081.272.15.49.2A3.44 3.44 0 005.96 3h.015L6 2.999l.025.002h.014l.053.001a3.869 3.869 0 00.799-.076c.217-.048.386-.118.49-.199.086-.066.119-.13.119-.227A1.5 1.5 0 006 1zm0 3h-.006a3.535 3.535 0 01-.326 0 4.435 4.435 0 01-.777-.097c-.283-.063-.614-.175-.885-.385A1.255 1.255 0 013.5 2.5a2.5 2.5 0 015 0c0 .454-.217.793-.506 1.017-.27.21-.602.322-.885.385a4.435 4.435 0 01-1.103.099H6zm1.5 12V6h1v10h-1z"
+                                    clip-rule="evenodd" />
+                                <path fill-rule="evenodd"
+                                    d="M15 4H1v1h14V4zM1 3a1 1 0 00-1 1v1a1 1 0 001 1h14a1 1 0 001-1V4a1 1 0 00-1-1H1z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="#">
+                            <svg class="bi bi-question-square" width="1em" height="1em" viewBox="0 0 16 16"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M14 1H2a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V2a1 1 0 00-1-1zM2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2z"
+                                    clip-rule="evenodd" />
+                                <path
+                                    d="M5.25 6.033h1.32c0-.781.458-1.384 1.36-1.384.685 0 1.313.343 1.313 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.007.463h1.307v-.355c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.326 0-2.786.647-2.754 2.533zm1.562 5.516c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container initial_margin">
+        <h1 class="display-2">Teoria del dibujo tecnico</h1>
+    </div>
+    <div class="container">
+        <h3>Introducci&oacute;n</h3>
+        <p style="text-align: justify">
+            El dibujo tiene sus inicios en la necesidad del hombre de comunicarse
+            mediante gr&aacute;ficas o dibujos para dar a entender lo que quiere
+            expresar.
+        </p>
+        <h3>&Eacute;poca primitiva y antigua</h3>
+        <p style="text-align: justify">
+            El hombre a trav&eacute;s de su historia evolutiva, antes de poder
+            comunicarse de manera verbal; lo hizo de manera gr&aacute;fica basado en
+            dibujos de objetos y animales de la vida diaria, cuyas evidencias se
+            encuentran en pinturas y grabados rupestres halladas en cavernas en
+            Altamira Espa&ntilde;a y en las Cavernas de Lascuax, en Francia,
+            adem&aacute;s los podemos encontrar tambi&eacute;n en diferentes puntos
+            al norte de Europa y en el norte de &Aacute;frica
+        </p>
+        <p>&nbsp;</p>
+        <div class="text-center">
+            <img src="/resources/img/post/01 Pintura Rupestre.png" class="img-fluid" alt="Responsive image">
+        
+            <p><em>Imagen 01. Figura Rupestre</em></p>
+    </div>
+        <p style="text-align: justify">
+            Las pinturas prehist&oacute;ricas constituyen documentos de incalculable
+            valor, porque de ese modo narr&oacute; su historia el hombre que no
+            conoc&iacute;a la escritura.&nbsp;
+        </p>
+        <h3>El dibujo t&eacute;cnico en la antig&uuml;edad</h3>
+        <p style="text-align: justify">
+            En el a&ntilde;o 2140 (A.C.) antes de cristo, hay la primera
+            manifestaci&oacute;n del dibujo t&eacute;cnico; encontrada en la estatua
+            del rey sumerio Gudea, llamada&nbsp;El arquitecto, y es el dibujo de una
+            construcci&oacute;n que aparece esculpida. Esta estatua se encuentra en
+            el museo del Louvre de Par&iacute;s. En dicha escultura, de forma
+            esquem&aacute;tica, se representan los planos de un edificio.
+        </p>
+        <p>&nbsp;</p>
+        <div class="text-center">
+            <img src="/resources/img/post/02 - Estatua del rey sumerio Gudea.jpg" class="img-fluid" alt="Responsive image">
+        
+            <p><em>Imagen 02. Estatua del rey sumerio Gudea (El arquitecto)</em></p>
+    </div>
+        
+        <p style="text-align: justify">
+            Del a&ntilde;o 1650 a.C. data el papiro de Ahmes. Este escriba egipcio,
+            redact&oacute;, en un papiro de 33 por 548 cm., una exposici&oacute;n de
+            contenido geom&eacute;trico dividida en cinco partes que abarcan: la
+            aritm&eacute;tica, la esteorotom&iacute;a, la geometr&iacute;a y el
+            c&aacute;lculo de pir&aacute;mides. En este papiro se llega a dar valor
+            aproximado al n&uacute;mero <span>&pi;</span>.
+        </p>
+        <p style="text-align: justify">
+            En el a&ntilde;o 600 a.C., encontramos a Tales, fil&oacute;sofo griego
+            nacido en Mileto. Fue el fundador de la filosof&iacute;a griega, y
+            est&aacute; considerado como uno de los Siete Sabios de Grecia. Se dice
+            de &eacute;l que introdujo la geometr&iacute;a en Grecia, ciencia que
+            aprendi&oacute; en Egipto. Sus conocimientos, le sirvieron para
+            descubrir importantes propiedades geom&eacute;tricas.
+        </p>
+        <p style="text-align: justify">
+            En el a&ntilde;o 300 a.C., encontramos a Euclides, matem&aacute;tico
+            griego. Su obra principal &ldquo;Elementos de geometr&iacute;a&rdquo;,
+            es un extenso tratado de matem&aacute;ticas en 13 vol&uacute;menes sobre
+            materias tales como: geometr&iacute;a plana, magnitudes inconmensurables
+            y geometr&iacute;a del espacio.
+        </p>
+        <p style="text-align: justify">
+            Arqu&iacute;medes (287-212 a.C.), notable matem&aacute;tico e inventor
+            griego, que escribi&oacute; importantes obras sobre geometr&iacute;a
+            plana y del espacio, aritm&eacute;tica y mec&aacute;nica. Naci&oacute;
+            en Siracusa, Sicilia, y se educ&oacute; en Alejandr&iacute;a, Egipto.
+        </p>
+        <h3>&Eacute;poca cl&aacute;sica y edad media</h3>
+        <p style="text-align: justify">
+            Al alcanzar la civilizaci&oacute;n las im&aacute;genes y dibujos se
+            transformaban en s&iacute;mbolos abstractos as&iacute; del arte de la
+            imagen, naci&oacute; el arte de la escritura. Los dibujos siguen siendo
+            unos de los principales apoyos pues ya no construyen pir&aacute;mides
+            sino palacios, coliseos y templos calculando desniveles y cimentaciones,
+            como Hipodamo de Mileto, en Grecia introduce el trazado en cuadricula,
+            as&iacute; como los Romanos el Trazo del Arco.
+        </p>
+        <p>&nbsp;</p>
+        <div class="text-center">
+            <img src="/resources/img/post/03 Epoca Clasica.png" class="img-fluid" alt="Responsive image">
+        
+            <p><em>Imagen 03. &Eacute;poca Cl&aacute;sica y edad media</em></p>
+    </div>
+        <p style="text-align: justify">
+            A lo largo de la historia, esta ansia de comunicarse mediante dibujos,
+            ha evolucionado, dando lugar por un lado al dibujo art&iacute;stico y
+            por otro al dibujo t&eacute;cnico. Mientras el primero intenta comunicar
+            ideas y sensaciones, bas&aacute;ndose en la sugerencia y estimulando la
+            imaginaci&oacute;n del espectador, el dibujo t&eacute;cnico, tiene como
+            fin, la representaci&oacute;n de los objetos lo m&aacute;s exactamente
+            posible, en forma y dimensiones.
+        </p>
+        <h3>&Eacute;poca del renacimiento</h3>
+        <p style="text-align: justify">
+            Es durante el Renacimiento, cuando las representaciones t&eacute;cnicas,
+            adquieren una verdadera madurez, son el caso de los trabajos del
+            arquitecto Brunelleschi, los dibujos de Leonardo de Vinci, y tantos
+            otros. Pero no es, hasta bien entrado el siglo XVIII, cuando se produce
+            un significativo avance en las representaciones t&eacute;cnicas.
+        </p>
+        <p>&nbsp;</p>
+        <div class="text-center">
+            <img src="/resources/img/post/04 Renacimiento.png" class="img-fluid" alt="Responsive image">
+        
+            <p><em>Imagen 04. Renacimiento</em></p>
+    </div>
+        <p>&nbsp;</p>
+        <h3>El dibujo t&eacute;cnico en la era moderna</h3>
+        <p style="text-align: justify">
+            Uno de los grandes avances, se debe al matem&aacute;tico franc&eacute;s
+            Gaspard Monge (1746-1818) ... Es considerado el inventor de la
+            geometr&iacute;a descriptiva. La geometr&iacute;a descriptiva es la que
+            nos permite representar sobre una superficie bidimensional, las
+            superficies tridimensionales de los objetos. Hoy en d&iacute;a existen
+            diferentes sistemas de representaci&oacute;n, que sirven a este fin,
+            como la perspectiva c&oacute;nica, el sistema de planos acotados, etc.
+            pero quiz&aacute;s el m&aacute;s importante es el sistema
+            di&eacute;drico, que fue desarrollado por Monge en su primera
+            publicaci&oacute;n en el a&ntilde;o 1799.
+        </p>
+        <p style="text-align: justify">
+            La &uacute;ltima gran aportaci&oacute;n al dibujo t&eacute;cnico, que lo
+            ha definido, tal y como hoy lo conocemos, ha sido la
+            normalizaci&oacute;n. Podemos definirla como &ldquo;el conjunto de
+            reglas y preceptos aplicables al dise&ntilde;o y fabricaci&oacute;n de
+            ciertos productos&rdquo;. Si bien, ya las civilizaciones caldea y
+            egipcia utilizaron este concepto para la fabricaci&oacute;n de ladrillos
+            y piedras, sometidos a unas dimensiones preestablecidas, es a finales
+            del siglo XIX en plena Revoluci&oacute;n Industrial, cuando se
+            empez&oacute; a aplicar el concepto de norma, en la
+            representaci&oacute;n de planos y la fabricaci&oacute;n de piezas. Pero
+            fue durante la 1&ordf; Guerra Mundial, ante la necesidad de abastecer a
+            los ej&eacute;rcitos, y reparar los armamentos, cuando la
+            normalizaci&oacute;n adquiere su impulso definitivo, con la
+            creaci&oacute;n en Alemania en 1917, del Comit&eacute; Alem&aacute;n de
+            Normalizaci&oacute;n.
+        </p>
+
+        <div class="text-center">
+            <img src="/resources/img/post/05 Normalizacion del Dibujo Tecnico.jpg" class="img-fluid" alt="Responsive image">
+        
+            <p><em>Imagen 05. Normalizaci&oacute;n del dibujo t&eacute;cnico.</em></p>
+    </div>
+
+    <h3>&Eacute;poca contempor&aacute;nea</h3>
+    <div class="text-center">
+        <img src="/resources/img/post/06 A Epoca Contemporanea.png" class="img-fluid" alt="Responsive image">
+    
+        <p><em>Imagen 06 A Elaboraci&oacute;n propia.</em></p>
+</div>
+
+<div class="text-center">
+    <img src="/resources/img/post/06 B Epoca Contemporanea.png" class="img-fluid" alt="Responsive image">
+
+    <p><em>Imagen 06 B. Epoca Contemporánea</em></p>
+</div>
+
+
+<p style="text-align: justify;">Es de gran importancia para el dibujante desarrollar el dibujo, pues las ideas y dise&ntilde;os iniciales son hechos a mano antes de que se hagan dibujos precisos con instrumentos.</p>
+<p style="text-align: justify;">En esta &eacute;poca, los principales instrumentos en el dibujo son: la mesa de dibujo o tablero, regla t, escuadra, la escala o escal&iacute;metro, el comp&aacute;s, l&aacute;pices de dibujo, plantillas para dibujar: formas est&aacute;ndares cuadrados, hexagonales, triangulares y el&iacute;pticos, plantillas para borrar, curv&iacute;grafos y sacapuntas, borrador, d&iacute;ngrafos y por supuesto la tinta.</p>
+<h3>&Eacute;poca actual</h3>
+<p style="text-align: justify;">Actualmente el dibujo t&eacute;cnico se realiza con computador, pues es m&aacute;s f&aacute;cil la fase de modificaci&oacute;n, edici&oacute;n y adaptaci&oacute;n sobre la pantalla, que sobre el papel; tambi&eacute;n para &nbsp;fabricaci&oacute;n y construcci&oacute;n; pues se puede calcular y observar c&oacute;mo se ver&iacute;a previamente el trabajo terminado sin m&aacute;s contratiempos.</p>
+<div class="text-center">
+    <img src="/resources/img/post/07 A Epoca Actual.png" class="img-fluid" alt="Responsive image">
+
+    <p><em>Imagen 07 A Elaboración propia.</em></p>
+</div>
+
+<div class="text-center">
+    <img src="/resources/img/post/07 B Epoca Actual.png" class="img-fluid" alt="Responsive image">
+
+    <p><em>Imagen 07 B Época Contemporánea</em></p>
+</div>
+
+
+<h3>Tipos de Dibujo.</h3>
+<p style="text-align: justify;"><strong>Dibujo Arquitect&oacute;nico:</strong>&nbsp; nos ubicamos en la concepci&oacute;n visual que altera el paisaje urbano, los espacios f&iacute;sicos de una obra o infraestructura civil y que es elaborada a escala de reducci&oacute;n para luego ser representada a una escala real o natural.</p>
+<div class="text-center">
+    <img src="/resources/img/post/08 Dibujo Arquitectonico.jpg" class="img-fluid" alt="Responsive image">
+
+    <p><em>Imagen 08. Dibujo Arquitect&oacute;nico</em></p>
+</div>
+
+<p style="text-align: justify;"><strong>Dibujo Art&iacute;stico:</strong> sirve para expresar ideas filos&oacute;ficas o est&eacute;ticas, as&iacute; como sentimientos y emociones. El artista cuando dibuja cosas, las dibuja tal como las ve emocionalmente de acuerdo con su propia y peculiar manera de percibir la realidad de su entorno.</p>
+
+<div class="text-center">
+    <img src="/resources/img/post/09 Dibujo Artistico.jpg" class="img-fluid" alt="Responsive image">
+
+    <p><em>Imagen 09. Dibujo Artístico</em></p>
+</div>
+<p style="text-align: justify;"><strong>Dibujo Geom&eacute;trico:</strong> Es aquel que se representa por medio de gr&aacute;ficas planas. Dibujo geom&eacute;trico constituye un verdadero y novedoso sistema de ense&ntilde;anza estructurado para garantizar, tanto al alumno de los primeros a&ntilde;os de las Escuelas T&eacute;cnicas como a los de las Facultades de Arquitectura e Ingenier&iacute;a -bachilleres o peritos mercantiles- un r&aacute;pido manejo y posterior dominio de la mano sobre el plano.</p>
+<div class="text-center">
+    <img src="/resources/img/post/10 Dibujo Geometrico.jpg" class="img-fluid" alt="Responsive image">
+
+    <p><em>Imagen 10. Dibujo Geométrico</em></p>
+</div>
+<p style="text-align: justify;"><strong>Dibujo Mec&aacute;nico:</strong> El dibujo mec&aacute;nico se emplea en la representaci&oacute;n de piezas o partes de m&aacute;quinas, maquinarias, veh&iacute;culos como gr&uacute;as y motos, aviones, helic&oacute;pteros y m&aacute;quinas industriales. Los planos que representan un mecanismo simple o una m&aacute;quina formada por un conjunto de piezas, son llamados planos de conjunto; y los que representa un s&oacute;lo elemento, plano de pieza. Los que representan un conjunto de piezas con las indicaciones gr&aacute;ficas para su colocaci&oacute;n, y armar un todo, son llamados planos de montaje.</p>
+<div class="text-center">
+    <img src="/resources/img/post/11 Dibujo Mecanico.jpg" class="img-fluid" alt="Responsive image">
+
+    <p><em>Imagen 11. Dibujo Mecánico</em></p>
+</div>
+<p style="text-align: justify;"><strong>Dibujo T&eacute;cnico:</strong> es el lenguaje gr&aacute;fico universal t&eacute;cnico normalizado por medio del cual se manifiesta una expresi&oacute;n precisa y exacta y, su objetivo principal es la exactitud precisamente. Las aptitudes para esta clase de dibujo por lo general son adquiridas, es decir, que se llega a &eacute;l a trav&eacute;s de un proceso de conocimiento y aprendizaje.</p>
+<p style="text-align: justify;">El dibujo t&eacute;cnico naci&oacute; de la necesidad de poder transmitir o comunicar los grandes sucesos o conocimientos de la poblaci&oacute;n prehist&oacute;ricas. Con el paso del tiempo iban surgiendo las necesidades de la sociedad, el dibujo t&eacute;cnico fue evolucionando ya no solo para comunicar alg&uacute;n suceso sino para ser utilizado en construcciones de ciudades, edificios, casas y as&iacute; poder representar una idea de una construcci&oacute;n en un papel.&nbsp;</p>
+<p style="text-align: justify;">&nbsp;El dibujo t&eacute;cnico es una herramienta muy necesaria e importante en la actualidad para toda la rama de la ingenier&iacute;a y para muchas otras disciplinas como el caso de la arquitectura.</p>
+<div class="text-center">
+    <img src="/resources/img/post/12 Dibujo Tecnico.jpg" class="img-fluid" alt="Responsive image">
+
+    <p><em>Imagen 12. Dibujo Técnico</em></p>
+</div>
+
+<p></p>
+<h2 style="text-align: center;">Importancia del dibujo tecnico</h2>
+<div class="text-center">
+    <img src="/resources/img/post/13 Importancia del Dibujo Tecnico.jpg" class="img-fluid" alt="Responsive image">
+
+    <p><em>Imagen 13. Importancia del Dibujo Técnico</em></p>
+</div>
+<p style="text-align: justify;">El dibujo t&eacute;cnico es en s&iacute; una herramienta que nos ayuda a interpretar planos o dibujos, dibujar, construir un edificio, pieza motora, etc. de una manera eficaz, eficiente y as&iacute; poder desarrollarnos como buenos profesionales dependiendo de la labor en la que se quiera ejercer y desempe&ntilde;ar. (Bichara S., Espoz L., Fabrega C. &amp; Villaroel C.)</p>
+<p style="text-align: justify;">Sin dibujos t&eacute;cnicos, la ingenier&iacute;a ser&iacute;a una disciplina llena de suposiciones. Los dibujos t&eacute;cnicos permiten a los ingenieros crear dise&ntilde;os, calcular fuerzas y tensiones en las estructuras y trabajar con fabricantes. La capacidad de entender y trabajar con dibujos t&eacute;cnicos no hace a alguien buen ingeniero, pero es una habilidad necesaria para ser un experto en la profesi&oacute;n. (Bichara S., Espoz L., F&aacute;brega C. &amp; Villaroel C.)</p>
+<p style="text-align: justify;">En conclusi&oacute;n, podemos decir que el dibujo t&eacute;cnico es esencial para generar la visi&oacute;n espacial en el &aacute;mbito laboral. El dibujo t&eacute;cnico es en s&iacute; una herramienta que nos ayuda a interpretar planos o dibujos, dibujar, construir un edificio, pieza motora, etc. de una manera eficaz, eficiente y as&iacute; poder desarrollarnos como buenos profesionales dependiendo de la labor en la que se quiera ejercer y desempe&ntilde;ar. (Bichara S., Espoz L., Fabrega C. &amp; Villaroel C.)</p>
+    </div>
+
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+            <small>Hecho con ♥</small>
+        </div>
+    </footer>
+</body>
+
+</html>
