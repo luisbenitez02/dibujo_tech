@@ -135,3 +135,11 @@ li.nav-item.boton > a:hover{
 .initial_margin{
   margin-top: 75px;
 }
+
+.bg-dark{
+  background-color: black !important;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+  color: white;
+}
