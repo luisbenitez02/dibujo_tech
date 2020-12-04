@@ -1,6 +1,13 @@
 .jumbotron {
-  background-image: url("../resources/backpic.jpg");
-  background-size: cover;
+  background-image: url("../resources/banner.jpeg");
+  background-size: auto;
+}
+.jumbotron > h1{
+  color:rgb(191, 63, 63);
+}
+
+.jumbotron > p{
+  color:black;
 }
 
 #contenedor{
